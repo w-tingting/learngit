@@ -138,9 +138,9 @@ $ git commit -m <message>
 
 ### 6.1 创建远程仓库
 
-使用`Github`网站作为自己的远程仓库。注册一个账户，即可获得免费的Git远程仓库。
+使用`GitHub`网站作为自己的远程仓库。注册一个账户，即可获得免费的`Git`远程仓库。
 
-本地Git仓库与Github仓库之间的传输通过SSH加密，具体设置方法如下：
+本地`Git`仓库与`GitHub`仓库之间的传输通过SSH加密，具体设置方法如下：
 
 1. 创建`SSH Key`
 
@@ -158,10 +158,10 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 3. 添加远程库
 
--  登陆GitHub，然后，在右上角找到“Create a new repo”按钮，创建一个新的仓库 。
+-  登陆`GitHub`，然后，在右上角找到“Create a new repo”按钮，创建一个新的仓库 。
 -  在Repository name填入`learngit`，其他保持默认设置，点击“Create repository”按钮，创建一个新的Git仓库。
 
-4.  把本地仓库的内容推送到GitHub仓库 
+4.  把本地仓库的内容推送到`GitHub`仓库 
 
 - 将本地库与远程库关联：
 
@@ -169,7 +169,7 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 $ git remote add origin git@github.com:username/learngit.git
 ```
 
-注意替换username为自己的Github用户名。 远程库的名字就是`origin`，这是Git默认的叫法 。
+注意替换username为自己的GitHub用户名。 远程库的名字就是`origin`，这是Git默认的叫法 。
 
  第一次使用Git的`clone`或者`push`命令连接GitHub时，会得到一个警告，选yes即可。
 
@@ -189,7 +189,7 @@ git push origin master
 
 ### 6.2 从远程仓库克隆
 
-1. 登陆Github，创建新的仓库。
+1. 登陆GitHub，创建新的仓库。
 2. 克隆一个本地库：
 
 ```
@@ -457,4 +457,48 @@ $ git tag -d v1.0
 ```
 git push origin:refs/tags/v1.0
 ```
+
+## 9. 使用GitHub参与开源项目
+
+1. 将开源项目`Fork`到自己的`GitHub`账号下
+2. 从自己的账号下克隆项目
+
+```
+git clone git@github.com:username/project.git
+```
+
+3. 修改完成后推送到自己的仓库
+4. 在`GitHub`上发起`pull request`
+
+## 10. 自定义Git
+
+- 显示颜色
+
+```
+git config --global color.ui true
+```
+
+忽略文件的原则是：
+
+1. 忽略操作系统自动生成的文件，比如缩略图等；
+2. 忽略编译生成的中间文件、可执行文件等，也就是如果一个文件是通过另一个文件自动生成的，那自动生成的文件就没必要放进版本库，比如Java编译产生的`.class`文件；
+3. 忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件。
+
+[具体gitignore文件规则](https://github.com/github/gitignore)
+
+- 强制添加忽略文件
+
+```
+git add -f <file>
+```
+
+- 查看错误规则
+
+```
+$ git check-ignore -v <file>
+```
+
+## 参考文献
+
+[廖雪峰的官方网站Git教程](https://www.liaoxuefeng.com/wiki/896043488029600)
 
