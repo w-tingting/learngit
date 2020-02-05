@@ -392,5 +392,69 @@ $ git rebase
 
 ## 8. 管理标签
 
+标签tag与某个commit绑在一起，易于记忆，比如：commit号是6a5819…的tag是v1.1。
 
+- 创建标签
+
+```
+$ git tag <tagname>
+```
+
+- 查看标签
+
+```
+$ git tag
+```
+
+- 对指定commit打标签
+
+```
+$ git tag <tagname> <commit id>
+```
+
+ 标签不是按时间顺序列出，而是按字母排序。
+
+- 查看标签信息
+
+```
+$ git show <tagname>
+```
+
+-  创建带有说明的标签 
+
+```
+$ git tag -a v1.0 -m "version 1.0 released" 1094abd
+```
+
+- 删除本地标签
+
+```
+$ git tag -d v1.0
+```
+
+- 推送标签到远程
+
+```
+$ git push origin v1.0
+```
+
+或者推送所有本地标签：
+
+```
+$ git push origin --tags
+```
+
+- 删除已推送的标签
+
+先删除本地标签：
+
+```
+$ git tag -d v1.0
+```
+
+再删除远程标签：
+
+```
+git push origin:refs/tags/v1.0
+```
 
