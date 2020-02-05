@@ -136,7 +136,7 @@ $ git commit -m <message>
 
 ## 6. 远程仓库
 
-- 创建远程仓库
+### 6.1 创建远程仓库
 
 使用`Github`网站作为自己的远程仓库。注册一个账户，即可获得免费的Git远程仓库。
 
@@ -152,9 +152,49 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 
 注意替换邮件地址为自己的邮件地址，一路回车。 之后可以在用户主目录里找到`.ssh`目录，里面有`id_rsa`和`id_rsa.pub`两个文件，这两个就是SSH Key的秘钥对，`id_rsa`是私钥，不能泄露出去，`id_rsa.pub`是公钥，可以放心地告诉任何人。 
 
-2. 登陆GitHub创建连接
+2. 登陆`GitHub`创建连接
 
 打开“Account settings”，“SSH Keys”页面，然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴`id_rsa.pub`文件的内容。
+
+3. 添加远程库
+
+-  登陆GitHub，然后，在右上角找到“Create a new repo”按钮，创建一个新的仓库 。
+-  在Repository name填入`learngit`，其他保持默认设置，点击“Create repository”按钮，创建一个新的Git仓库。
+
+4.  把本地仓库的内容推送到GitHub仓库 
+
+- 将本地库与远程库关联：
+
+```
+$ git remote add origin git@github.com:username/learngit.git
+```
+
+注意替换username为自己的Github用户名。 远程库的名字就是`origin`，这是Git默认的叫法 。
+
+ 第一次使用Git的`clone`或者`push`命令连接GitHub时，会得到一个警告，选yes即可。
+
+- 将本地库的内容推送到远程：
+
+```
+$ git push -u origin master
+```
+
+第一次推送master分支时加`-u`， 加上了`-u`参数，Git不但会把本地的`master`分支内容推送的远程新的`master`分支，还会把本地的`master`分支和远程的`master`分支关联起来，在以后的推送或者拉取时就可以简化命令 。 每次本地提交后，只要有必要，就可以使用命令：
+
+```git push origin master
+git push origin master
+```
+
+推送最新修改 。
+
+### 6.2 从远程仓库克隆
+
+1. 登陆Github，创建新的仓库。
+2. 克隆一个本地库：
+
+```
+git clone git@github.com:username/repo-name.git
+```
 
 ## 7. 管理分支
 
