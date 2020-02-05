@@ -314,12 +314,24 @@ $ git stash pop
 - 修复工作现场同样的bug
 
 ```
-git cherry-pick <bug fixed id>
+$ git cherry-pick <bug fixed id>
 ```
 
+多次stash，恢复的时候，先用`git stash list`查看，然后恢复指定的stash，用命令：
 
+```
+$ git stash apply stash@{0}
+```
 
+10. 强行删除
 
+ 要丢弃一个没有被合并过的分支，可以通过 
+
+```
+$ git branch -D <name>
+```
+
+强行删除 。
 
 
 
