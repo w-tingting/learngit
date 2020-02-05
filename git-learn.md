@@ -198,9 +198,56 @@ git clone git@github.com:username/repo-name.git
 
 ## 7. 管理分支
 
+1. 创建分支`dev`
 
+```
+$ git checkout -b dev
+```
 
+ `git checkout`命令加上`-b`参数表示创建并切换，等价于：
 
+```
+$ git branch dev
+$ git checkout dev
+```
+
+2. 查看当前分支
+
+```
+$ git branch
+```
+
+3. 切换回master主分支
+
+```
+$ git checkout master
+```
+
+也可以使用`switch`语句。
+
+- 切换分支
+
+```
+$ git switch -c dev
+```
+
+- 切换回master
+
+```
+$ git switch master
+```
+
+4. 合并分支
+
+```
+$ git merge dev
+```
+
+5. 删除分支
+
+```
+$ git branch -d dev
+```
 
 ## 8. 管理标签
 
