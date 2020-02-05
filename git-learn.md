@@ -257,7 +257,15 @@ $ git log --graph
 
 7. 解决冲突的办法
 
+修改冲突部分内容后，重新提交到Git仓库。
 
+8. 合并分支时关闭`Fast Forward`模式
+
+```
+$ git merge --no-ff -m "merge with no-ff" dev
+```
+
+9. 
 
 ## 8. 管理标签
 
