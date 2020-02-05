@@ -252,7 +252,7 @@ $ git branch -d dev
 6. 查看分支合并图
 
 ```
-$ git log --graph
+$ git log --graph --pretty=oneline --abbrev-commit
 ```
 
 7. 解决冲突的办法
@@ -265,7 +265,67 @@ $ git log --graph
 $ git merge --no-ff -m "merge with no-ff" dev
 ```
 
-9. 
+9. 修复分支bug
+
+- 保存工作现场
+
+```
+$ git status
+```
+
+- 创建临时分支
+
+ 确定要在哪个分支上修复bug，假定需要在`master`分支上修复，就从`master`创建临时分支： 
+
+```
+$ git checkout master
+$ git checkout -b issue-101
+```
+
+在临时分支修复bug，提交内容。
+
+```
+$ git add <file>
+$ git commit -m "fixed bug 101"
+```
+
+切换回master分支，并合并临时分支，然后删除临时分支。
+
+- 恢复工作现场
+
+返回工作分支：
+
+```
+$ git switch dev
+```
+
+查看工作现场列表：
+
+```
+$ git stash list
+```
+
+恢复现场：
+
+```
+$ git stash pop
+```
+
+- 修复工作现场同样的bug
+
+```
+git cherry-pick <bug fixed id>
+```
+
+
+
+
+
+
+
+
+
+
 
 ## 8. 管理标签
 
