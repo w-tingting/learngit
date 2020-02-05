@@ -333,11 +333,62 @@ $ git branch -D <name>
 
 强行删除 。
 
+11. 多人协作
 
+- 查看远程库信息
 
+```
+$ git remote
+```
 
+或者：
 
+```
+$ git remote -v
+```
 
+- 推送分支
+
+```
+$ git push origin <分支name>
+```
+
+- 抓取分支
+
+```
+$ git clone git@github.com:username/repo-name.git
+```
+
+ 默认抓取本地的`master`分支。  要在`dev`分支上开发，就必须创建远程`origin`的`dev`分支到本地：
+
+```
+$ git checkout -b dev origin/dev
+```
+
+推送冲突时：
+
+ 先用`git pull`把最新的提交从`origin/dev`抓下来，然后，在本地合并，解决冲突 。
+
+```
+$ git pull
+```
+
+ `git pull`也失败了，原因是没有指定本地`dev`分支与远程`origin/dev`分支的链接，根据提示，设置`dev`和`origin/dev`的链接，之后再`git pull`： 
+
+```
+$ git branch --set-upstream-to=origin/dev dev
+$ git pull
+```
+
+本地合并冲突时，手动解决，参考<u>7.解决分支冲突的办法</u>部分内容。
+
+12. 分支整理
+
+ 把本地未push的分叉提交历史整理成直线 。
+
+```
+$ git rebase
+```
 
 ## 8. 管理标签
 
