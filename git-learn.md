@@ -249,6 +249,10 @@ $ git merge dev
 $ git branch -d dev
 ```
 
+7. 解决冲突的方式
+
+
+
 ## 8. 管理标签
 
 
