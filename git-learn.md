@@ -249,6 +249,16 @@ $ git merge dev
 $ git branch -d dev
 ```
 
+6. 查看分支合并图
+
+```
+$ git log --graph
+```
+
+7. 解决冲突的办法
+
+
+
 ## 8. 管理标签
 
 
