@@ -249,7 +249,13 @@ $ git merge dev
 $ git branch -d dev
 ```
 
-7. 解决冲突的方式
+6. 查看分支合并图
+
+```
+$ git log --graph
+```
+
+7. 解决冲突的办法
 
 
 
